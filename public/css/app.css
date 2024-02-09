@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    padding-top: 56px;
+    overflow-x: hidden;
+    background-color: #F2F2F2;
+    font-family: sans-serif;
+    background-image: linear-gradient(90deg, rgba(51,51,51,0.05) 1px, transparent 1px), linear-gradient(180deg, rgba(51,51,51,0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.container {
+    background-color: #cdd1d9;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.navbar-support-link {
+    color: #D32F2F;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navbar-support-phone {
+    display: flex;
+    position: relative;
+    color: #D32F2F;
+    cursor: pointer;
+}
+
+.nav-item {
+    list-style: none;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-item::after, .navbar-nav a::before {
+    content: '';
+    display: block;
+    height: 2px;
+    background: #333;
+    transition: width 0.3s;
+    width: 0;
+    margin: auto;
+}
+
+.nav-item:hover::after, .navbar-nav a:hover::before {
+    width: 100%;
+}
+
+.nav-item::after, .navbar-nav a::before {
+    background: #333333;
+}
+
+.phone-number-tooltip {
+    visibility: hidden;
+    width: auto;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.navbar-support-phone:hover .phone-number-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.logo-img {
+    max-height: 40px;
+    margin-right: 5px;
+}
+
+.profile-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.profile-img {
+    text-align: center;
+    padding: 10px;
+}
+
+.card-img-top {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.card-title {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #333333;
+}
+
+.profile-info h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333333;
+}
+
+.profile-info p {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    color: #333333;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.animaciaNavbarItemu {
+    animation: fadeIn 0.5s ease;
+}
+
+.background-image_mapa {
+    object-fit: cover;
+    width: 100%;
+}
+
+.background-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center top;
+    position: absolute;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+button {
+    background-color: #4872e5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.deleteCommentButton {
+    background-color: #ec5353;
+}
+
+button:hover {
+    background-color: #D32F2F;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    background-color: #D32F2F;
+    border-radius: 5px;
+}
+
+.hero-button:hover {
+    background-color: #801818;
+}
+
+.card, .doctor-card {
+    margin: 1.5rem auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    transition: transform 0.2s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.bottom-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #7F7F7F;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 130%;
+    margin: 0;
+    opacity: 0.8;
+}
+
+.bottom-panel a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.bottom-panel a:hover {
+    color: black;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.carousel-item {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.map {
+    height: 400px;
+    width: 100%;
+}
+
+.comments-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .comment-form {
+        margin: auto;
+        width: 60%;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .comment-form-container, .comments-container {
+        margin-bottom: 30px;
+    }
+
+    .comment-form textarea {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+    .comment {
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        background-color: #e5e5e5;
+    }
+
+    .comment:hover {
+        border: 1px solid #5284f3;
+    }
+
+    h1 {
+        font-weight: bolder;
+        color: #333;
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .carousel-inner {
+        max-height: 80%;
+        margin: 0 auto;
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    #map {
+        height: 80%;
+        width: 100%;
+    }
+
+    .edit-comment-textarea {
+        width: 100%;
+        height: 100px;
+        margin-top: 10px;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #007bff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
+    }
+
+    textarea {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 12px;
+        font-family: sans-serif;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .btn-save-comment {
+        background-color: #D32F2F;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        transition: background-color 0.3s;
+    }
+
+    .btn-save-comment:hover {
+        background-color: #0056b3;
+    }
+
+#flash-message {
+    position: absolute;
+    top: 55px;
+    right: 55px;
+    z-index: 1000;
+    animation: slideIn 0.5s ease-out, fadeOut 4s 3.5s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+    @media(max-width: 764px) {
+        .carousel-item img {
+            max-height: 50%;
+            max-width: 50%;
+        }
+
+        .bottom-panel a {
+            font-size: 50%;
+        }
+
+        .card {
+            max-width: 100%;
+        }
+
+        .bottom-panel {
+            flex-direction: column;
+        }
+
+        .profile-img img {
+            max-width: 150px;
+        }
+
+        .profile-info h2 {
+            font-size: 1.75rem;
+        }
+
+        .profile-info p {
+            font-size: 1rem;
+        }
+
+        .text-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 8px;
+        }
+
+        #current-time {
+            font-size: 50%;
+        }
+
+        .container, .row, .col, .comment-form, .comments-container {
+            width: 100%;
+            padding: 15px;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        .navbar-nav {
+            text-align: center;
+        }
+
+        .comment, .comment-form textarea, .edit-comment-textarea {
+            width: 100%;
+        }
+
+        .doctor-card, .comments-container {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .hero-button, .btn-save-comment {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+        }
+
+        .table {
+            width: fit-content;
+        }
+    }
+
+
+
+
+
+
