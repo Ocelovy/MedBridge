@@ -54,7 +54,7 @@
     @if(isset($patients) && $patients->count() > 0)
         <div class="container mt-5">
             <h3>Zoznam pacientov</h3>
-            <table class="table">
+            <table class="custom-table">
                 <thead>
                 <tr>
                     <th>Meno</th>
@@ -78,7 +78,7 @@
                         <td>{{ $patient->birth_number }}</td>
                         <td>{{ $patient->insurance_code }}</td>
                         <td>
-                            @if(auth()->check() && auth()->user()->isAdmin())
+                            @if(auth()->check() && auth()->user()->isAdmin() || auth()->user()->isDoktor())
                                 <a href="{{ route('patients.edit', $patient->id) }}" class="btn btn-primary btn-sm">Editovať</a>
                                 <form action="{{ route('patients.destroy', $patient->id) }}" method="POST" style="display:inline;">
                                     @csrf

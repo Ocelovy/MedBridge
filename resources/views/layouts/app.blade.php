@@ -97,12 +97,12 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark">
                                     <li><a class="dropdown-item" href="{{ route('fotogaleria') }}">Fotogaléria</a></li>
-
+                                    @if(auth()->check() && auth()->user()->isAdmin() || auth()->user()->isDoktor())
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li><a class="dropdown-item" href="{{ route('pacient') }}">Pridať pacienta</a></li>
-
+                                    @endif
                                 </ul>
                             </li>
                         @endauth

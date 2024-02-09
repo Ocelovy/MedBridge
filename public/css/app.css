@@ -396,7 +396,27 @@ button:hover {
     }
 }
 
+.custom-table-responsive {
+    overflow-x: auto;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.custom-table th, .custom-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
     @media(max-width: 764px) {
+        .custom-table th, .custom-table td {
+            padding: 5px;
+            font-size: 12px;
+        }
+
         .carousel-item img {
             max-height: 50%;
             max-width: 50%;

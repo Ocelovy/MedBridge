@@ -6,6 +6,7 @@ use App\Models\Patient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
+use function Laravel\Prompts\error;
 
 function validateBirthNumber($value) {
     if (strlen($value) != 10) {
@@ -46,7 +47,13 @@ class PatientController extends Controller
 
     public function getPatientInfo(Patient $patient)
     {
-        return response()->json($patient);
+        $user = auth()->user();
+        if ($user->isDoktor() || $user->isAdmin()) {
+            $patients = Patient::all();
+            return response()->json($patient);
+        } else {
+            return view("/");
+        }
     }
 
     public function store(Request $request)
@@ -71,13 +78,24 @@ class PatientController extends Controller
 
     public function index()
     {
-        $patients = Patient::all();
+        $user = auth()->user();
+        if ($user->isDoktor() || $user->isAdmin()) {
+            $patients = Patient::all();
         return view('/patients/pacient', compact('patients'));
+        } else {
+            return view("/");
+        }
     }
 
     public function edit(Patient $patient)
     {
-        return view('patients.edit', compact('patient'));
+        $user = auth()->user();
+        if ($user->isDoktor() || $user->isAdmin()) {
+            $patients = Patient::all();
+            return view('patients.edit', compact('patient'));
+        } else {
+            return view("/");
+        }
     }
 
     public function update(Request $request, Patient $patient)
